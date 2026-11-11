@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#10152c" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2310152c'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='48' fill='%23e8c69b'%3E☾%3C/text%3E%3C/svg%3E" />
+  <title>Moonlit Shrine — A Spiritbound Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <div id="game-root" aria-label="3D Moonlit Shrine game">
+      <div id="scene"></div>
+      <div class="vignette"></div>
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Moonlit Shrine home"><span class="brand-mark">✦</span><span>MOONLIT <b>SHRINE</b></span></a>
+        <div class="chapter"><span>CHAPTER 01</span><strong>The Lantern Path</strong></div>
+        <button id="sound-toggle" class="icon-button" aria-label="Toggle sound">♫</button>
+      </header>
+      <section class="game-hud" aria-live="polite">
+        <div class="quest-card"><div class="quest-icon">✧</div><div><span class="eyebrow">YOUR PURPOSE</span><strong>Gather moon petals</strong><small>Find 8 to awaken the shrine</small></div></div>
+        <div class="progress-card"><div class="progress-line"><span>MOON PETALS</span><b><i id="petal-count">0</i> / 8</b></div><div class="progress-track"><div id="progress-fill"></div></div><div class="hearts" id="hearts"><span>♥</span><span>♥</span><span>♥</span></div></div>
+      </section>
+      <div class="center-message" id="toast" aria-live="polite"></div>
+      <div class="bottom-hint" id="hint"><span class="keycap">WASD</span> to move <span class="dot">·</span> <span class="keycap">SPACE</span> to dash</div>
+      <div class="mobile-controls" id="mobile-controls">
+        <div class="joystick" id="joystick" aria-label="Movement joystick"><div class="joy-ring"></div><div class="joy-knob" id="joy-knob"></div></div>
+        <button id="dash-button" class="dash-button" aria-label="Dash"><span>✦</span><small>DASH</small></button>
+      </div>
+      <div class="overlay" id="start-overlay">
+        <div class="overlay-panel intro-panel">
+          <div class="moon-emblem">☾<span>✦</span></div>
+          <p class="eyebrow">A QUIET NIGHT IN THE SPIRIT REALM</p>
+          <h1>Moonlit<br><em>Shrine</em></h1>
+          <p class="intro-copy">Follow the lanterns, gather the scattered moon petals, and bring the old shrine back to life.</p>
+          <div class="story-note"><span>✧</span><p><b>Yuna, the wayfarer</b><br>Some paths only appear after dark.</p></div>
+          <button id="start-button" class="primary-button">Begin your journey <span>→</span></button>
+          <div class="control-note">MOVE WITH WASD / ARROWS OR TOUCH <span>·</span> SPACE / DASH TO BURST</div>
+        </div>
+      </div>
+      <div class="overlay hidden" id="end-overlay">
+        <div class="overlay-panel end-panel"><div class="moon-emblem">✧</div><p class="eyebrow" id="end-eyebrow">THE SHRINE REMEMBERS</p><h2 id="end-title">A wish<br><em>answered.</em></h2><p class="intro-copy" id="end-copy">The moon petals have found their way home.</p><button id="restart-button" class="primary-button">Play again <span>↻</span></button></div>
+      </div>
+      <div class="loading" id="loading"><span class="loader"></span><span>WAKING THE SPIRIT REALM</span></div>
+    </div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
